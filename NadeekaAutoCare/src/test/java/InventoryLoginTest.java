@@ -21,7 +21,7 @@ public class InventoryLoginTest {
     }
 
     @Test
-    public void loginTest() {
+    public void loginTest() throws InterruptedException {
         // Wrong Username & Wrong Password
         WebElement wrongUsername1 = driver.findElement(By.id("username"));
         wrongUsername1.sendKeys("WrongUserName");
@@ -97,6 +97,10 @@ public class InventoryLoginTest {
         correctPassword5.sendKeys("inventory123");
         WebElement submit5 = driver.findElement(By.name("submit"));
         submit5.click();
+        Thread.sleep(3000);
+
+
+        driver.quit();
 
 
 
